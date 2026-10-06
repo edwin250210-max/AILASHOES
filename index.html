@@ -24,10 +24,6 @@
     .hero p { max-width: 510px; margin: 0; color: #dedbd3; font-size: 16px; line-height: 1.65; }
     .hero-boton { display: inline-block; margin-top: 25px; padding: 13px 20px; border: 1px solid #d6b96f; border-radius: 2px; color: #f0d58f; font-size: 12px; font-weight: bold; letter-spacing: 1.4px; text-decoration: none; text-transform: uppercase; }
     .hero-boton:hover, .hero-boton:focus { background: #d6b96f; color: #171511; }
-    .beneficios { max-width: 1180px; padding: 0 22px; margin: -1px auto 0; position: relative; z-index: 2; }
-    .beneficios-lista { margin: 0; padding: 19px 0; border-bottom: 1px solid #e5e0d7; text-align: center; }
-    .beneficio { display: inline-block; width: 32%; padding: 0 8px; color: #554b37; font-size: 12px; letter-spacing: 1px; font-weight: bold; text-transform: uppercase; }
-    .beneficio b { color: #a7833e; padding-right: 7px; }
     .principal { max-width: 1180px; margin: 0 auto; padding: 39px 22px 70px; }
     .encabezado-catalogo { margin-bottom: 22px; }
     .encabezado-catalogo .sobrelinea { color: #98763b; }
@@ -35,9 +31,8 @@
     .encabezado-catalogo p { margin: 0; color: #716d65; font-size: 14px; }
     .herramientas { margin: 25px 0 20px; padding: 15px; background: #fff; border: 1px solid #e9e4da; box-shadow: 0 4px 15px #20180b0a; }
     .herramientas:after { content: ""; display: table; clear: both; }
-    .busqueda, .selector-talla { float: left; width: 49%; min-height: 47px; padding: 11px 13px; border: 1px solid #ded9cf; border-radius: 2px; background: #fff; color: #25221d; }
-    .selector-talla { float: right; }
-    .busqueda:focus, .selector-talla:focus { outline: 2px solid #b99859; outline-offset: 1px; }
+    .selector-talla { display: block; width: 100%; min-height: 47px; padding: 11px 13px; border: 1px solid #ded9cf; border-radius: 2px; background: #fff; color: #25221d; }
+    .selector-talla:focus { outline: 2px solid #b99859; outline-offset: 1px; }
     #estado { min-height: 25px; margin: 16px 0 12px; color: #625b4e; font-size: 13px; font-weight: bold; }
     #catalogo { display: block; margin: 0 -8px; font-size: 0; }
     .producto { display: inline-block; vertical-align: top; width: 25%; padding: 0 8px 17px; font-size: 14px; }
@@ -67,16 +62,11 @@
       .hero h1 { max-width: 420px; font-size: 39px; }
       .hero p { max-width: 390px; font-size: 14px; }
       .hero:after { right: -260px; top: -110px; }
-      .beneficios { padding: 0 12px; }
-      .beneficios-lista { padding: 15px 0; }
-      .beneficio { width: 32%; padding: 0 3px; font-size: 9px; letter-spacing: .4px; }
-      .beneficio b { display: block; padding: 0 0 5px; font-size: 13px; }
       .principal { padding: 31px 13px 48px; }
       .encabezado-catalogo h2 { font-size: 29px; }
       .encabezado-catalogo p { font-size: 12px; line-height: 1.5; }
       .herramientas { padding: 10px; margin-top: 19px; }
-      .busqueda, .selector-talla { float: none; display: block; width: 100%; min-height: 46px; }
-      .selector-talla { margin-top: 8px; }
+      .selector-talla { min-height: 46px; }
       #catalogo { margin: 0 -5px; }
       .producto { width: 50%; padding: 0 5px 11px; }
       .producto-contenido { padding: 10px 9px 12px; }
@@ -103,21 +93,12 @@
       <a class="hero-boton" href="#catalogo-inicio">Ver catálogo&nbsp; ↓</a>
     </div>
   </section>
-  <section class="beneficios" aria-label="Información del catálogo">
-    <div class="beneficios-lista">
-      <div class="beneficio"><b>01</b> Modelos disponibles</div>
-      <div class="beneficio"><b>02</b> Existencias por talla</div>
-      <div class="beneficio"><b>03</b> Fotos ampliables</div>
-    </div>
-  </section>
   <main class="principal" id="catalogo-inicio">
     <div class="encabezado-catalogo">
       <div class="sobrelinea">Descubre la colección</div>
       <h2>Nuestro catálogo</h2>
-      <p>Busca un modelo o elige tu talla para ver qué hay disponible.</p>
     </div>
     <div class="herramientas">
-      <input class="busqueda" id="busqueda" type="search" placeholder="Buscar modelo…" aria-label="Buscar modelo">
       <select class="selector-talla" id="talla" aria-label="Filtrar por talla">
         <option value="">Ver todas las tallas</option>
         <option value="23">Talla 23</option><option value="23.5">Talla 23.5</option>
@@ -141,7 +122,6 @@
       var catalogo = document.getElementById("catalogo");
       var estado = document.getElementById("estado");
       var talla = document.getElementById("talla");
-      var busqueda = document.getElementById("busqueda");
       var visor = document.getElementById("visor");
       var imagenGrande = document.getElementById("imagenGrande");
       var productos = [];
@@ -150,15 +130,12 @@
       }
       function renderizar() {
         var seleccion = talla.value;
-        var termino = (busqueda.value || "").toLowerCase().replace(/^\s+|\s+$/g, "");
         var salida = "";
         var cuenta = 0;
-        var i, j, producto, items, nombre, nombreLower, item, valorTalla;
+        var i, j, producto, items, nombre, item, valorTalla;
         for (i = 0; i < productos.length; i++) {
           producto = productos[i];
           nombre = producto.nombre || "Producto sin nombre";
-          nombreLower = String(nombre).toLowerCase();
-          if (termino && nombreLower.indexOf(termino) === -1) continue;
           items = producto.tallas || [];
           var tallasHTML = "";
           var disponibles = 0;
@@ -206,8 +183,6 @@
         solicitud.send(null);
       }
       talla.onchange = renderizar;
-      busqueda.oninput = renderizar;
-      busqueda.onkeyup = renderizar;
       catalogo.onclick = function (evento) {
         var elemento = evento.target || evento.srcElement;
         if (elemento && elemento.className && String(elemento.className).indexOf("foto") !== -1) {
