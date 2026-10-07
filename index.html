@@ -6,27 +6,21 @@
   <meta name="theme-color" content="#11100e">
   <meta name="description" content="Explora el catálogo de AILA Shoes y consulta los modelos disponibles por talla.">
   <title>AILA SHOES | Estilo para cada paso</title>
-
   <style>
     * { box-sizing: border-box; }
-
     html { -webkit-text-size-adjust: 100%; }
-
     body {
       margin: 0;
       background: #f7f5f1;
       color: #191713;
       font-family: Arial, Helvetica, sans-serif;
     }
-
     button, select { font: inherit; }
-
     .barra {
       background: #11100e;
       color: #fff;
       border-bottom: 1px solid #b99859;
     }
-
     .barra-interior {
       display: table;
       width: 100%;
@@ -35,7 +29,6 @@
       margin: 0 auto;
       padding: 12px 22px;
     }
-
     .marca {
       display: table-cell;
       vertical-align: middle;
@@ -46,7 +39,6 @@
       letter-spacing: 3px;
       white-space: nowrap;
     }
-
     .marca span {
       display: block;
       margin-top: 6px;
@@ -55,7 +47,6 @@
       font-weight: 400;
       letter-spacing: 4px;
     }
-
     .barra-etiqueta {
       display: table-cell;
       vertical-align: middle;
@@ -64,7 +55,6 @@
       font-size: 12px;
       letter-spacing: 1px;
     }
-
     .hero {
       position: relative;
       overflow: hidden;
@@ -77,7 +67,6 @@
       );
       color: #fff;
     }
-
     .hero:after {
       content: "";
       position: absolute;
@@ -91,7 +80,6 @@
         0 0 0 35px #b9985910,
         0 0 0 70px #b998590a;
     }
-
     .hero-contenido {
       position: relative;
       z-index: 1;
@@ -99,7 +87,6 @@
       margin: auto;
       padding: 68px 22px 62px;
     }
-
     .sobrelinea {
       color: #dec17d;
       font-size: 11px;
@@ -107,7 +94,6 @@
       letter-spacing: 3px;
       text-transform: uppercase;
     }
-
     .hero h1 {
       max-width: 640px;
       margin: 13px 0 12px;
@@ -116,7 +102,6 @@
       line-height: 1.04;
       font-weight: 400;
     }
-
     .hero p {
       max-width: 510px;
       margin: 0;
@@ -124,7 +109,6 @@
       font-size: 16px;
       line-height: 1.65;
     }
-
     .hero-boton {
       display: inline-block;
       margin-top: 25px;
@@ -138,40 +122,33 @@
       text-decoration: none;
       text-transform: uppercase;
     }
-
     .hero-boton:hover,
     .hero-boton:focus {
       background: #d6b96f;
       color: #171511;
     }
-
     .principal {
       max-width: 1180px;
       margin: 0 auto;
       padding: 39px 22px 70px;
     }
-
     .encabezado-catalogo {
       margin-bottom: 22px;
     }
-
     .encabezado-catalogo .sobrelinea {
       color: #98763b;
     }
-
     .encabezado-catalogo h2 {
       margin: 8px 0 4px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 400;
     }
-
     .ayuda-catalogo {
       margin: 8px 0 0;
       color: #81785f;
       font-size: 12px;
     }
-
     .herramientas {
       margin: 25px 0 20px;
       padding: 15px;
@@ -179,7 +156,6 @@
       border: 1px solid #e9e4da;
       box-shadow: 0 4px 15px #20180b0a;
     }
-
     .selector-talla {
       display: block;
       width: 100%;
@@ -190,12 +166,10 @@
       background: #fff;
       color: #25221d;
     }
-
     .selector-talla:focus {
       outline: 2px solid #b99859;
       outline-offset: 1px;
     }
-
     #estado {
       min-height: 25px;
       margin: 16px 0 12px;
@@ -203,13 +177,11 @@
       font-size: 13px;
       font-weight: bold;
     }
-
     #catalogo {
       display: block;
       margin: 0 -8px;
       font-size: 0;
     }
-
     .producto {
       display: inline-block;
       vertical-align: top;
@@ -217,7 +189,6 @@
       padding: 0 8px 17px;
       font-size: 14px;
     }
-
     .producto-interior {
       height: 100%;
       overflow: hidden;
@@ -225,7 +196,6 @@
       border: 1px solid #e8e2d8;
       box-shadow: 0 5px 18px #20180b0c;
     }
-
     .foto-contenedor {
       position: relative;
       width: 100%;
@@ -233,7 +203,6 @@
       overflow: hidden;
       background: #eeece7;
     }
-
     .foto {
       position: absolute;
       top: 0;
@@ -241,14 +210,13 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       cursor: zoom-in;
     }
-
     .producto-contenido {
       padding: 14px 13px 16px;
     }
-
     .nombre {
       min-height: 38px;
       margin: 0 0 12px;
@@ -257,11 +225,9 @@
       line-height: 1.35;
       font-weight: bold;
     }
-
     .tallas {
       font-size: 0;
     }
-
     .talla {
       display: inline-block;
       min-width: 47px;
@@ -276,26 +242,22 @@
       line-height: 1.3;
       cursor: pointer;
     }
-
     .talla:hover,
     .talla:focus {
       border-color: #b99859;
       background: #f1e8d4;
       outline: 2px solid #b99859;
     }
-
     .talla strong {
       display: block;
       font-size: 12px;
     }
-
     .talla small {
       display: block;
       margin-top: 2px;
       color: #797264;
       font-size: 9px;
     }
-
     .sin-resultados {
       margin: 0 8px;
       padding: 42px 18px;
@@ -305,7 +267,6 @@
       text-align: center;
       font-size: 15px;
     }
-
     .pie {
       padding: 31px 20px;
       background: #11100e;
@@ -314,7 +275,6 @@
       font-size: 11px;
       letter-spacing: 1px;
     }
-
     .pie strong {
       display: block;
       margin-bottom: 8px;
@@ -322,7 +282,6 @@
       font-size: 15px;
       letter-spacing: 3px;
     }
-
     .visor {
       display: none;
       position: fixed;
@@ -333,18 +292,15 @@
       text-align: center;
       cursor: zoom-out;
     }
-
     .visor.abierto {
       display: block;
     }
-
     .visor:before {
       content: "";
       display: inline-block;
       height: 100%;
       vertical-align: middle;
     }
-
     .visor img {
       display: inline-block;
       max-width: 96%;
@@ -352,7 +308,6 @@
       vertical-align: middle;
       object-fit: contain;
     }
-
     .cerrar-visor {
       position: absolute;
       top: 12px;
@@ -363,98 +318,78 @@
       color: #fff;
       font-size: 22px;
     }
-
     @media (max-width: 900px) {
       .producto { width: 33.333%; }
       .hero h1 { font-size: 47px; }
     }
-
     @media (max-width: 600px) {
       .barra-interior {
         min-height: 60px;
         padding: 10px 15px;
       }
-
       .marca {
         font-size: 18px;
         letter-spacing: 2px;
       }
-
       .barra-etiqueta {
         font-size: 10px;
       }
-
       .hero-contenido {
         padding: 49px 18px 42px;
       }
-
       .hero h1 {
         max-width: 420px;
         font-size: 39px;
       }
-
       .hero p {
         max-width: 390px;
         font-size: 14px;
       }
-
       .hero:after {
         top: -110px;
         right: -260px;
       }
-
       .principal {
         padding: 31px 13px 48px;
       }
-
       .encabezado-catalogo h2 {
         font-size: 29px;
       }
-
       .herramientas {
         padding: 10px;
         margin-top: 19px;
       }
-
       .selector-talla {
         min-height: 46px;
       }
-
       #catalogo {
         margin: 0 -5px;
       }
-
       .producto {
         width: 50%;
         padding: 0 5px 11px;
       }
-
       .producto-contenido {
         padding: 10px 9px 12px;
       }
-
       .nombre {
         min-height: 36px;
         margin-bottom: 9px;
         font-size: 12px;
       }
-
       .talla {
         min-width: 41px;
         margin-right: 3px;
         padding: 6px 3px;
         font-size: 10px;
       }
-
       .talla strong {
         font-size: 11px;
       }
-
       .talla small {
         font-size: 8px;
       }
     }
-
     @media (max-width: 340px) {
       .hero h1 { font-size: 34px; }
       .producto { width: 100%; }
@@ -462,51 +397,39 @@
     }
   </style>
 </head>
-
 <body>
-
   <header class="barra">
     <div class="barra-interior">
       <div class="marca">
         AILA SHOES
         <span>ESTILO PARA CADA PASO</span>
       </div>
-
       <div class="barra-etiqueta">
         CATÁLOGO OFICIAL
       </div>
     </div>
   </header>
-
   <section class="hero">
     <div class="hero-contenido">
       <div class="sobrelinea">Colección AILA Shoes</div>
-
       <h1>Encuentra tu próximo par favorito.</h1>
-
       <p>
         Explora botas, botines y tenis. Revisa los modelos y las tallas
         que están disponibles.
       </p>
-
       <a class="hero-boton" href="#catalogo-inicio">
         Ver catálogo&nbsp; ↓
       </a>
     </div>
   </section>
-
   <main class="principal" id="catalogo-inicio">
-
     <div class="encabezado-catalogo">
       <div class="sobrelinea">Descubre la colección</div>
-
       <h2>Nuestro catálogo</h2>
-
       <p class="ayuda-catalogo">
         Toca una talla disponible para consultar por WhatsApp.
       </p>
     </div>
-
     <div class="herramientas">
       <select class="selector-talla" id="talla" aria-label="Filtrar por talla">
         <option value="">Ver todas las tallas</option>
@@ -521,20 +444,15 @@
         <option value="27">Talla 27</option>
       </select>
     </div>
-
     <div id="estado" role="status" aria-live="polite">
       Cargando catálogo…
     </div>
-
     <section id="catalogo" aria-label="Modelos disponibles"></section>
-
   </main>
-
   <footer class="pie">
     <strong>AILA SHOES</strong>
     ESTILO PARA CADA PASO
   </footer>
-
   <div
     id="visor"
     class="visor"
@@ -550,24 +468,18 @@
     >
       ×
     </button>
-
     <img id="imagenGrande" alt="">
   </div>
-
   <script>
     (function () {
-
       var API =
         "https://catalogo-backend-publico.onrender.com/api/catalogo?location=aila-shoes";
-
       var catalogo = document.getElementById("catalogo");
       var estado = document.getElementById("estado");
       var talla = document.getElementById("talla");
       var visor = document.getElementById("visor");
       var imagenGrande = document.getElementById("imagenGrande");
-
       var productos = [];
-
       function textoSeguro(valor) {
         return String(valor == null ? "" : valor)
           .replace(/&/g, "&amp;")
@@ -576,12 +488,10 @@
           .replace(/\"/g, "&quot;")
           .replace(/'/g, "&#39;");
       }
-
       function renderizar() {
         var seleccion = talla.value;
         var salida = "";
         var cuenta = 0;
-
         var i;
         var j;
         var producto;
@@ -589,47 +499,36 @@
         var nombre;
         var item;
         var valorTalla;
-
         for (i = 0; i < productos.length; i++) {
           producto = productos[i];
           nombre = producto.nombre || "Producto sin nombre";
-
           var fotoWhatsApp = producto.imagen || "";
           var tallasHTML = "";
           var disponibles = 0;
-
           items = producto.tallas || [];
-
           for (j = 0; j < items.length; j++) {
             item = items[j];
             valorTalla = Number(item.talla);
-
             if (valorTalla < 22 || valorTalla > 27) continue;
-
             if (
               seleccion &&
               String(item.talla) !== seleccion
             ) continue;
-
             disponibles++;
-
             var mensaje =
               "Hola, vi el modelo " +
               nombre +
               " en AILA Shoes. ¿Me confirmas si tienes la talla " +
               item.talla +
               " disponible?";
-
             if (fotoWhatsApp) {
               mensaje +=
                 "\n\nFoto del modelo:\n" +
                 fotoWhatsApp;
             }
-
             var enlaceWhatsApp =
               "https://wa.me/526147127207?text=" +
               encodeURIComponent(mensaje);
-
             tallasHTML +=
               '<a class="talla"' +
               ' href="' + enlaceWhatsApp + '"' +
@@ -648,19 +547,14 @@
               " disp.</small>" +
               "</a>";
           }
-
           if (!disponibles) continue;
-
           cuenta++;
-
           var imagen = textoSeguro(producto.imagen || "");
-
           var alt = textoSeguro(
             producto.imagen_alt ||
             nombre ||
             "Calzado AILA Shoes"
           );
-
           salida +=
             '<article class="producto">' +
               '<div class="producto-interior">' +
@@ -681,37 +575,30 @@
               "</div>" +
             "</article>";
         }
-
         estado.textContent =
           cuenta +
           (cuenta === 1
             ? " modelo disponible"
             : " modelos disponibles");
-
         catalogo.innerHTML = cuenta
           ? salida
           : '<div class="sin-resultados">' +
               "No encontramos modelos con esos filtros. Prueba otra talla." +
             "</div>";
       }
-
       function cargarCatalogo() {
         var solicitud = new XMLHttpRequest();
-
         var separador =
           API.indexOf("?") === -1
             ? "?"
             : "&";
-
         solicitud.open(
           "GET",
           API + separador + "_=" + new Date().getTime(),
           true
         );
-
         solicitud.onreadystatechange = function () {
           if (solicitud.readyState !== 4) return;
-
           if (
             solicitud.status >= 200 &&
             solicitud.status < 300
@@ -719,57 +606,45 @@
             try {
               var datos =
                 JSON.parse(solicitud.responseText);
-
               productos =
                 datos &&
                 Object.prototype.toString.call(datos.productos) ===
                   "[object Array]"
                   ? datos.productos
                   : [];
-
               renderizar();
-
             } catch (error) {
               estado.textContent =
                 "No se pudo leer el catálogo.";
-
               catalogo.innerHTML =
                 '<div class="sin-resultados">' +
                   "Intenta cargar la página de nuevo." +
                 "</div>";
             }
-
           } else {
             estado.textContent =
               "No se pudo cargar el catálogo.";
-
             catalogo.innerHTML =
               '<div class="sin-resultados">' +
                 "El catálogo no respondió. Intenta de nuevo en un momento." +
               "</div>";
           }
         };
-
         solicitud.onerror = function () {
           estado.textContent =
             "No se pudo conectar al catálogo.";
-
           catalogo.innerHTML =
             '<div class="sin-resultados">' +
               "Revisa tu conexión e intenta de nuevo." +
             "</div>";
         };
-
         solicitud.send(null);
       }
-
       talla.onchange = renderizar;
-
       catalogo.onclick = function (evento) {
         var elemento =
           evento.target ||
           evento.srcElement;
-
         if (
           elemento &&
           elemento.className &&
@@ -777,30 +652,22 @@
         ) {
           imagenGrande.src = elemento.src;
           imagenGrande.alt = elemento.alt;
-
           visor.className = "visor abierto";
           visor.setAttribute("aria-hidden", "false");
-
           document.body.style.overflow = "hidden";
         }
       };
-
       function cerrarVisor() {
         visor.className = "visor";
         visor.setAttribute("aria-hidden", "true");
-
         imagenGrande.src = "";
         document.body.style.overflow = "";
       }
-
       visor.onclick = cerrarVisor;
-
       document.getElementById("cerrarVisor").onclick =
         cerrarVisor;
-
       document.onkeydown = function (evento) {
         evento = evento || window.event;
-
         if (
           evento.key === "Escape" ||
           evento.keyCode === 27
@@ -808,16 +675,12 @@
           cerrarVisor();
         }
       };
-
       cargarCatalogo();
-
       window.setInterval(
         cargarCatalogo,
         120000
       );
-
     }());
   </script>
-
 </body>
 </html>
